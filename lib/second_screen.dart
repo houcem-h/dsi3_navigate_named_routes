@@ -26,12 +26,19 @@ class MySecondScreen extends StatelessWidget {
             ),
             const Padding(padding: EdgeInsets.only(bottom: 20)),
             RaisedButton(
-              child: const Text("Previous Screen"),
+              child: const Text("Go to Screen 1"),
                 color: Colors.teal,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.pop(context);
-                  //Navigator.of(context).pop(); // alternative syntax
+                  Navigator.pushNamed(context, '/screen1');
+                }
+            ),const Padding(padding: EdgeInsets.only(bottom: 10)),
+            RaisedButton(
+              child: const Text("Go to Screen 3"),
+                color: Colors.teal,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/screen3');
                 }
             ),
           ],

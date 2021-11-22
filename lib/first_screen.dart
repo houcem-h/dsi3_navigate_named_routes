@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyThirdScreen extends StatelessWidget {
-  const MyThirdScreen({Key? key, required this.title}) : super(key: key);
+import './second_screen.dart';
+
+class MyFirstScreen extends StatelessWidget {
+  const MyFirstScreen({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -17,7 +19,7 @@ class MyThirdScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "Screen n°2",
+              "Screen n°1",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
@@ -26,12 +28,19 @@ class MyThirdScreen extends StatelessWidget {
             ),
             const Padding(padding: EdgeInsets.only(bottom: 20)),
             RaisedButton(
-              child: const Text("Previous Screen"),
+              child: const Text("Go to Screen 2"),
                 color: Colors.teal,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.pop(context);
-                  //Navigator.of(context).pop(); // alternative syntax
+                  Navigator.pushNamed(context, '/screen2');
+                }
+            ),const Padding(padding: EdgeInsets.only(bottom: 10)),
+            RaisedButton(
+                child: const Text("Go to Screen 3"),
+                color: Colors.teal,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/screen3');
                 }
             ),
           ],
